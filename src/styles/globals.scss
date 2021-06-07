@@ -1,0 +1,27 @@
+// Variables
+$mainColor: rgb(97, 247, 210);
+$secondaryColor: rgb(255, 208, 156);
+$drawerWidth: 200px;
+$smallScreen: 820px;
+
+// Globals
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  @media only screen and (max-width: $smallScreen) {
+    font-size: 16px;
+  }
+}
+
+// Blueprints
+.view-container {
+  padding-top: 75px;
+  padding-left: $drawerWidth + 75px;
+  padding-right: 75px;
+
+  @media only screen and (max-width: $smallScreen) {
+    padding: 75px 10px 0 10px;
+  }
+}

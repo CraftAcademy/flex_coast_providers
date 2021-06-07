@@ -1,0 +1,43 @@
+{
+  "inquiries": [
+    {
+      "id": 1,
+      "size": "1",
+      "office_type": "office",
+      "company": "Flex Coast",
+      "peers": true,
+      "email": "lucy@example.com",
+      "flexible": true,
+      "phone": "0707123456",
+      "locations": ["Gothenburg City", "Southside", "Gothenburg City", "Southside"],
+      "start_date": "21 Jun 2021",
+      "inquiry_date": "06 Jun 2021"
+    },
+    {
+      "id": 2,
+      "size": "2",
+      "office_type": "office",
+      "company": "Craft Academy",
+      "peers": true,
+      "email": "kimmy@example.com",
+      "flexible": true,
+      "phone": "0707123456",
+      "locations": ["Gothenburg City", "Southside"],
+      "start_date": "21 Jun 2021",
+      "inquiry_date": "07 Jun 2021"
+    },
+    {
+      "id": 3,
+      "size": "1",
+      "office_type": "office",
+      "company": "ICA",
+      "peers": true,
+      "email": "chrissy@example.com",
+      "flexible": true,
+      "phone": "0707123456",
+      "locations": ["Gothenburg City", "Southside"],
+      "start_date": "21 Jun 2021",
+      "inquiry_date": "10 Jun 2021"
+    }
+  ]
+}
