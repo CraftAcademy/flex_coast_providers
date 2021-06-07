@@ -1,0 +1,24 @@
+// Variables
+$mainColor: #61f7d2;
+$secondaryColor: #ffd09c;
+$drawerWidth: 200px;
+$smallScreen: 820px;
+
+// Globals
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+// Blueprints
+.view-container {
+  padding-top: 75px;
+  padding-left: $drawerWidth + 75px;
+  padding-right: 75px;
+
+  @media only screen and (max-width: $smallScreen) {
+    padding: 75px 10px 0 10px;
+  }
+}

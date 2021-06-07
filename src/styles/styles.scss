@@ -1,0 +1,97 @@
+@import './globals.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 1500;
+  height: 75px;
+  width: 100%;
+  background-color: $secondaryColor;
+
+  h4 {
+    color: white;
+    font-size: 2rem;
+  }
+
+  .menu-button {
+    position: absolute;
+    left: 0;
+    top: 75px/2;
+    margin-left: 25px;
+    color: white;
+  }
+}
+
+.drawer {
+  .MuiDrawer-paper {
+    width: $drawerWidth;
+    margin-top: 75px;
+  }
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: calc(100vh - 75px);
+  @extend .view-container;
+}
+
+.table {
+  margin-top: 50px;
+  height: auto;
+  @media only screen and (max-width: $smallScreen) {
+    max-width: 600px;
+  }
+
+  .table-header th {
+    font-weight: bold;
+  }
+
+  .date-switch {
+    .MuiSwitch-colorSecondary.Mui-checked {
+      color: $mainColor;
+    }
+    .MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+      background-color: $mainColor;
+    }
+  }
+
+  .MuiTableCell-root.collapsible-cell {
+    background-color: rgba(222, 222, 222, 0.2);
+    padding-bottom: 0;
+    padding-top: 0;
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media only screen and (max-width: $smallScreen) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .info-container {
+        padding: 15px;
+      }
+
+      .notes-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        margin: 15px;
+        width: 50%;
+        border: 1px solid lightgrey;
+        @media only screen and (max-width: $smallScreen) {
+          width: 90%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
