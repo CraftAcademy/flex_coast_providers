@@ -60,6 +60,10 @@
   color: white;
 }
 
+.error-paragraph {
+  text-align: center;
+}
+
 .drawer .MuiDrawer-paper {
   width: 200px;
   margin-top: 75px;
@@ -157,6 +161,27 @@
   float: right;
   font-weight: bold;
   text-align: end;
+}
+
+.table .MuiTableCell-root.collapsible-cell .wrapper .info-container span:first-letter {
+  text-transform: capitalize;
+}
+
+.table .MuiTableCell-root.collapsible-cell .wrapper .status-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+}
+
+.table .MuiTableCell-root.collapsible-cell .wrapper .status-buttons-container div:first-of-type {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .table .MuiTableCell-root.collapsible-cell .wrapper .notes-container {
