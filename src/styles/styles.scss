@@ -28,11 +28,19 @@
   }
 }
 
+.error-paragraph {
+  text-align: center;
+}
+
 .drawer {
   .MuiDrawer-paper {
     width: $drawerWidth;
     margin-top: 75px;
   }
+}
+
+.status-popover {
+  padding: 0 10px;
 }
 
 .dashboard-container {
@@ -100,6 +108,18 @@
           float: right;
           font-weight: bold;
           text-align: end;
+          &:first-letter {
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      .status-buttons-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        div:first-of-type {
+          flex-direction: row;
         }
       }
 

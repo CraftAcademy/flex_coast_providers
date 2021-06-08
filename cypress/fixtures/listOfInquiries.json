@@ -11,7 +11,8 @@
       "phone": "0707123456",
       "locations": ["Gothenburg City", "Southside", "Gothenburg City", "Southside"],
       "start_date": "21 Jun 2021",
-      "inquiry_date": "06 Jun 2021"
+      "inquiry_date": "06 Jun 2021",
+      "inquiry_status": "pending"
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@
       "phone": "0707123456",
       "locations": ["Gothenburg City", "Southside"],
       "start_date": "21 Jun 2021",
-      "inquiry_date": "07 Jun 2021"
+      "inquiry_date": "07 Jun 2021",
+      "inquiry_status": "done"
     },
     {
       "id": 3,
@@ -37,7 +39,8 @@
       "phone": "0707123456",
       "locations": ["Gothenburg City", "Southside"],
       "start_date": "21 Jun 2021",
-      "inquiry_date": "10 Jun 2021"
+      "inquiry_date": "10 Jun 2021",
+      "inquiry_status": "started"
     }
   ]
 }

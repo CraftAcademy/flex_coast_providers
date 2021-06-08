@@ -17,11 +17,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "PORT=3002 react-scripts start ",
-    "build": "react-scripts build && echo '/* /index.html 200' | cat >build/_redirects",
+    "start": "REACT_APP_STAGE=dev PORT=3002 react-scripts start ",
+    "build:dev": "REACT_APP_STAGE=dev react-scripts build && echo '/* /index.html 200' | cat >build/_redirects",
+    "build:prod": "REACT_APP_STAGE=production react-scripts build && echo '/* /index.html 200' | cat >build/_redirects",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:silent": "PORT=3002 BROWSER=none react-scripts start",
+    "start:silent": "REACT_APP_STAGE=dev PORT=3002 BROWSER=none react-scripts start",
     "cy:run": "cypress run",
     "cy:integrate": "start-server-and-test start:silent http://localhost:3002/ cy:run",
     "cy:open": "cypress open",
