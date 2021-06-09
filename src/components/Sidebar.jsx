@@ -4,10 +4,12 @@ import List from '@material-ui/core/List'
 import Divider from '@material-ui/core/Divider'
 import MailIcon from '@material-ui/icons/Mail'
 import SidebarIcon from './SidebarIcon'
+import logo from '../assets/logo_4.svg'
 
 const Sidebar = () => {
   return (
     <Drawer className='drawer' variant='permanent'>
+       <img src={logo} alt='logo'/>
       <List>
         <SidebarIcon>
           <MailIcon />
