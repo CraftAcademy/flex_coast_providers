@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -9,21 +10,33 @@ import Paper from '@material-ui/core/Paper'
 import IconButton from '@material-ui/core/IconButton'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
-import { useSelector } from 'react-redux'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+
 import Inquiries from '../modules/Inquiries'
 import InquiryRows from './InquiryRows'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { dataQuery } from '../modules/TableServices'
+import StatusFilter from './StatusFilter'
 
 const InquiryTable = () => {
   const { inquiries } = useSelector((state) => state)
-  const [sortDate, setSortDate] = useState(true)
+  const [sortDate, setSortDate] = useState(false)
+  const [status, setStatus] = useState({
+    pending: true,
+    started: true,
+    done: true,
+  })
   const isSmall = useMediaQuery('(max-width:600px)')
 
   useEffect(() => {
     Inquiries.index()
   }, [])
 
-  const inquiryRows = inquiries.map((item) => {
+  const inquiryRows = dataQuery(
+    inquiries,
+    'inquiry_status',
+    status,
+    sortDate
+  ).map((item) => {
     return <InquiryRows key={item.id} item={item} />
   })
   return (
@@ -46,11 +59,14 @@ const InquiryTable = () => {
               <>
                 <TableCell>Email</TableCell>
                 <TableCell>Move in date</TableCell>
+                <TableCell>
+                  Status <StatusFilter status={status} setStatus={setStatus} />
+                </TableCell>
               </>
             )}
           </TableRow>
         </TableHead>
-        <TableBody>{sortDate ? inquiryRows : inquiryRows.reverse()}</TableBody>
+        <TableBody>{inquiryRows}</TableBody>
       </Table>
     </TableContainer>
   )

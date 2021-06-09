@@ -1,6 +1,7 @@
 // Variables
 $mainColor: rgb(97, 247, 210);
 $secondaryColor: rgb(255, 208, 156);
+$backgroundColor: rgba(255, 208, 156, 0.1);
 $drawerWidth: 200px;
 $smallScreen: 820px;
 
@@ -13,6 +14,10 @@ $smallScreen: 820px;
   @media only screen and (max-width: $smallScreen) {
     font-size: 16px;
   }
+}
+
+#root {
+  background-color: $backgroundColor;
 }
 
 // Blueprints

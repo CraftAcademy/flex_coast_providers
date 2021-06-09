@@ -20,7 +20,6 @@
   }
 
   .menu-button {
-    position: absolute;
     left: 0;
     top: 75px/2;
     margin-left: 25px;
@@ -28,11 +27,28 @@
   }
 }
 
+.error-paragraph {
+  text-align: center;
+}
+
 .drawer {
   .MuiDrawer-paper {
     width: $drawerWidth;
-    margin-top: 75px;
+    background-color: $secondaryColor;
+    color: white;
+
+    .MuiSvgIcon-root {
+      color: white;
+    }
+
+    img {
+      margin: 50px 10px 5px;
+    }
   }
+}
+
+.status-popover {
+  padding: 0 10px;
 }
 
 .dashboard-container {
@@ -44,7 +60,6 @@
 }
 
 .table {
-  margin-top: 50px;
   height: auto;
   @media only screen and (max-width: $smallScreen) {
     max-width: 600px;
@@ -100,6 +115,18 @@
           float: right;
           font-weight: bold;
           text-align: end;
+          &:first-letter {
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      .status-buttons-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        div:first-of-type {
+          flex-direction: row;
         }
       }
 
