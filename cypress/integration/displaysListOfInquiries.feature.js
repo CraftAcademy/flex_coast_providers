@@ -11,7 +11,7 @@ describe('User can see the inquiries', () => {
   })
   describe('Successfully', () => {
     it('is expected to show three inquiries ', () => {
-      cy.get('[data-cy=inquiry]').should('have.length', 3)
+      cy.get('[data-cy=inquiry]').should('have.length', 6)
     })
     it('is expected to show the content of the inquiries', () => {
       cy.get('[data-cy=inquiry]')

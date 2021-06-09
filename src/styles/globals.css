@@ -11,6 +11,10 @@
   }
 }
 
+#root {
+  background-color: rgba(255, 208, 156, 0.1);
+}
+
 .view-container {
   padding-top: 75px;
   padding-left: 275px;
@@ -21,5 +25,9 @@
   .view-container {
     padding: 75px 10px 0 10px;
   }
+}
+
+.logo {
+  margin: 10px;
 }
 /*# sourceMappingURL=globals.css.map */

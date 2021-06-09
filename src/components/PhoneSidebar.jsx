@@ -4,6 +4,7 @@ import IconButton from '@material-ui/core/IconButton'
 import MailIcon from '@material-ui/icons/Mail'
 import SidebarIcon from './SidebarIcon'
 import MenuIcon from '@material-ui/icons/Menu'
+import logo from '../assets/logo_4.svg'
 
 const PhoneSidebar = () => {
   const [open, setOpen] = useState(false)
@@ -18,6 +19,7 @@ const PhoneSidebar = () => {
         anchor='left'
         open={open}
         onClose={() => setOpen(false)}>
+          <img src={logo} alt='logo' />
         <SidebarIcon>
           <MailIcon />
         </SidebarIcon>
