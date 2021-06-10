@@ -1,9 +1,11 @@
 // Variables
 $mainColor: rgb(97, 247, 210);
 $secondaryColor: rgb(255, 208, 156);
-$backgroundColor: rgba(255, 208, 156, 0.1);
+$backgroundColor: whitesmoke;
 $drawerWidth: 200px;
 $smallScreen: 820px;
+$tablet: 1024px;
+$phone: 620px;
 
 // Globals
 * {
@@ -31,6 +33,25 @@ $smallScreen: 820px;
   }
 }
 
+.MuiSnackbarContent-root {
+  background-color: $secondaryColor !important;
+}
+
+.error-snack-container {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+
+  p {
+    color: #333;
+    margin-right: 10px;
+  }
+}
+.close-icon {
+  color: #333 !important;
+  float: right;
+}
 .logo {
-  margin: 10px 
+  margin: 10px;
+  margin-bottom: 25px;
 }

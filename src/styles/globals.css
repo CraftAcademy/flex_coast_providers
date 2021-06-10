@@ -12,7 +12,7 @@
 }
 
 #root {
-  background-color: rgba(255, 208, 156, 0.1);
+  background-color: whitesmoke;
 }
 
 .view-container {
@@ -27,7 +27,28 @@
   }
 }
 
+.MuiSnackbarContent-root {
+  background-color: #ffd09c !important;
+}
+
+.error-snack-container {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.error-snack-container p {
+  color: #333;
+  margin-right: 10px;
+}
+
+.close-icon {
+  color: #333 !important;
+  float: right;
+}
+
 .logo {
   margin: 10px;
+  margin-bottom: 25px;
 }
 /*# sourceMappingURL=globals.css.map */

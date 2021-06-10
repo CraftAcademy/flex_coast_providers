@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "data": {
+    "id": 1,
+    "name": "Mr. Johnny",
+    "email": "johnny@cage.com",
+    "provider": "email",
+    "uid": "johnny@cage.com",
+    "allow_password_change": false
+  }
+}
