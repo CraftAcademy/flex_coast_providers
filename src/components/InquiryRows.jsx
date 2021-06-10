@@ -85,6 +85,11 @@ const InquiryRows = ({ item }) => {
                   Status:
                   <span data-cy='inquiry-status'>{item.inquiry_status}</span>
                 </p>
+                {item.broker && (
+                  <p>
+                    Active broker: <span data-cy='broker'>{item.broker}</span>
+                  </p>
+                )}
                 <div className='status-buttons-container'>
                   <FormControl component='fieldset'>
                     <RadioGroup

@@ -31,7 +31,8 @@
       "locations": ["Gothenburg City", "Southside"],
       "start_date": "21 Jun 2021",
       "inquiry_date": "07 Jun 2021",
-      "inquiry_status": "done"
+      "inquiry_status": "done",
+      "broker": "Mr. Johnny"
     },
     {
       "id": 3,
@@ -45,7 +46,8 @@
       "locations": ["Gothenburg City", "Southside"],
       "start_date": "21 Jun 2021",
       "inquiry_date": "10 Jun 2021",
-      "inquiry_status": "started"
+      "inquiry_status": "started",
+      "broker": "Mr. Johnny"
     },
     {
       "id": 4,
@@ -59,7 +61,8 @@
       "locations": ["Gothenburg City", "Nordstan"],
       "start_date": "05 Jul 2021",
       "inquiry_date": "08 Jun 2021",
-      "inquiry_status": "started"
+      "inquiry_status": "started",
+      "broker": "Mr. Jens"
     },
     {
       "id": 5,
@@ -73,7 +76,8 @@
       "locations": ["Gothenburg City"],
       "start_date": "04 Aug 2021",
       "inquiry_date": "01 Jun 2021",
-      "inquiry_status": "started"
+      "inquiry_status": "started",
+      "broker": "Mrs. Johanna"
     },
     {
       "id": 6,
@@ -87,7 +91,8 @@
       "locations": ["Gothenburg City"],
       "start_date": "15 Jun 2021",
       "inquiry_date": "10 Jun 2021",
-      "inquiry_status": "started"
+      "inquiry_status": "started",
+      "broker": "Mr. Johnny"
     }
   ]
 }
