@@ -8,6 +8,10 @@ describe('Broker is able to update status of inquiry', () => {
       }
     )
     cy.visit('/')
+    cy.window().its('store').invoke('dispatch', {
+      type: 'AUTHENTICATE',
+      payload: 'Johhny Cage',
+    })
     cy.get('[data-cy=inquiry]').first().click()
   })
   describe('Successfully', () => {

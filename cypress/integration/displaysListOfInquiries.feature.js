@@ -8,6 +8,10 @@ describe('User can see the inquiries', () => {
       }
     )
     cy.visit('/')
+    cy.window().its('store').invoke('dispatch', {
+      type: 'AUTHENTICATE',
+      payload: 'Johhny Cage',
+    })
   })
   describe('Successfully', () => {
     it('is expected to show three inquiries ', () => {
