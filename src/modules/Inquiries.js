@@ -9,7 +9,7 @@ const Inquiries = {
     } catch (error) {}
   },
   async update(id, status, setInquiryStatus) {
-    let params = { form_data: { inquiry_status: status } }
+    let params = { form_data: { status_action: status } }
     try {
       await axios.put(`/inquiries/${id}`, params)
       setInquiryStatus(status)

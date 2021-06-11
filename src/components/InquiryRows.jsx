@@ -85,6 +85,12 @@ const InquiryRows = ({ item }) => {
                   Status:
                   <span data-cy='inquiry-status'>{item.inquiry_status}</span>
                 </p>
+                {item.broker && (
+                  <p>
+                    Active broker:
+                    <span data-cy='broker'>{item.broker.name}</span>
+                  </p>
+                )}
                 <div className='status-buttons-container'>
                   <FormControl component='fieldset'>
                     <RadioGroup
@@ -93,19 +99,24 @@ const InquiryRows = ({ item }) => {
                       onChange={(event) => statusHandler(event.target.value)}>
                       <FormControlLabel
                         data-cy='status-btn-1'
-                        value='pending'
+                        disabled={inquiryStatus === 'done'}
+                        checked={inquiryStatus === 'pending'}
+                        value='set_to_pending'
                         control={<Radio />}
                         label='Pending'
                       />
                       <FormControlLabel
                         data-cy='status-btn-2'
-                        value='started'
+                        checked={inquiryStatus === 'started'}
+                        value='start'
                         control={<Radio />}
                         label='Started'
                       />
                       <FormControlLabel
                         data-cy='status-btn-3'
-                        value='done'
+                        disabled={inquiryStatus === 'pending'}
+                        checked={inquiryStatus === 'done'}
+                        value='finish'
                         control={<Radio />}
                         label='Done'
                       />

@@ -2,19 +2,23 @@ describe('Broker is able to update status of inquiry', () => {
   beforeEach(() => {
     cy.intercept(
       'GET',
-      'https://flex-coast-development.herokuapp.com/api/inquiries',
+      'https://flex-coast-api-development.herokuapp.com/api/inquiries',
       {
         fixture: 'listOfInquiries.json',
       }
     )
     cy.visit('/')
+    cy.window().its('store').invoke('dispatch', {
+      type: 'AUTHENTICATE',
+      payload: 'Johhny Cage',
+    })
     cy.get('[data-cy=inquiry]').first().click()
   })
   describe('Successfully', () => {
     beforeEach(() => {
       cy.intercept(
         'PUT',
-        'https://flex-coast-development.herokuapp.com/api/inquiries/**',
+        'https://flex-coast-api-development.herokuapp.com/api/inquiries/**',
         {
           message: 'The inquiry status has been updated',
         }
@@ -26,12 +30,18 @@ describe('Broker is able to update status of inquiry', () => {
           fixture.inquiries[0].inquiry_status = 'started'
           cy.intercept(
             'GET',
-            'https://flex-coast-development.herokuapp.com/api/inquiries',
+            'https://flex-coast-api-development.herokuapp.com/api/inquiries',
             { body: fixture }
           )
         })
         cy.get('[data-cy=status-btn-2]').click()
         cy.get('[data-cy=inquiry-status]').should('contain', 'started')
+      })
+    })
+
+    it.only('is expected to not to be able to change from pending to done', () => {
+      cy.get('[data-cy=inquiry-collapsible-cell]').within(() => {
+        cy.get('[data-cy=status-btn-3]').should('be.disabled')
       })
     })
   })
@@ -40,7 +50,7 @@ describe('Broker is able to update status of inquiry', () => {
     beforeEach(() => {
       cy.intercept(
         'PUT',
-        'https://flex-coast-development.herokuapp.com/api/inquiries/**',
+        'https://flex-coast-api-development.herokuapp.com/api/inquiries/**',
         {
           statusCode: 500,
         }
