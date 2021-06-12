@@ -19,7 +19,7 @@ const PhoneSidebar = () => {
         anchor='left'
         open={open}
         onClose={() => setOpen(false)}>
-          <img src={logo} alt='logo' />
+        <img src={logo} alt='logo' />
         <SidebarIcon>
           <MailIcon />
         </SidebarIcon>
