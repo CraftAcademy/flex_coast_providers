@@ -1,15 +1,20 @@
 // Variables
 $mainColor: rgb(97, 247, 210);
 $secondaryColor: rgb(255, 208, 156);
-$backgroundColor: rgba(255, 208, 156, 0.1);
+$backgroundColor: #fff;
 $drawerWidth: 200px;
 $smallScreen: 820px;
+$tablet: 1024px;
+$mobile: 620px;
+$font: 'Nunito', sans-serif;
 
 // Globals
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Nunito', sans-serif !important;
   font-size: 20px;
   @media only screen and (max-width: $smallScreen) {
     font-size: 16px;
@@ -31,6 +36,25 @@ $smallScreen: 820px;
   }
 }
 
+.MuiSnackbarContent-root {
+  background-color: $secondaryColor !important;
+}
+
+.error-snack-container {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+
+  p {
+    color: #333;
+    margin-right: 10px;
+  }
+}
+.close-icon {
+  color: #333 !important;
+  float: right;
+}
 .logo {
-  margin: 10px 
+  margin: 10px;
+  margin-bottom: 25px;
 }

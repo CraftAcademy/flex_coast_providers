@@ -17,6 +17,13 @@ const rootReducer = (state, action) => {
         error: false,
         message: '',
       }
+    case 'AUTHENTICATE':
+      return {
+        ...state,
+        error: false,
+        authenticated: true,
+        name: action.payload,
+      }
     default:
       return state
   }

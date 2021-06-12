@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Nunito', sans-serif !important;
   font-size: 20px;
 }
 
@@ -12,7 +13,7 @@
 }
 
 #root {
-  background-color: rgba(255, 208, 156, 0.1);
+  background-color: #fff;
 }
 
 .view-container, .dashboard-container {
@@ -27,8 +28,29 @@
   }
 }
 
+.MuiSnackbarContent-root {
+  background-color: #ffd09c !important;
+}
+
+.error-snack-container {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.error-snack-container p {
+  color: #333;
+  margin-right: 10px;
+}
+
+.close-icon {
+  color: #333 !important;
+  float: right;
+}
+
 .logo {
   margin: 10px;
+  margin-bottom: 25px;
 }
 
 .header {
@@ -77,12 +99,17 @@
   color: white;
 }
 
+.drawer .MuiDrawer-paper p {
+  font-size: 14px;
+  text-align: center;
+}
+
 .drawer .MuiDrawer-paper .MuiSvgIcon-root {
   color: white;
 }
 
 .drawer .MuiDrawer-paper img {
-  margin: 50px 10px 5px;
+  margin: 50px 10px 25px;
 }
 
 .status-popover {
@@ -225,4 +252,133 @@
     margin-bottom: 10px;
   }
 }
-/*# sourceMappingURL=styles.css.map */
+
+.login-page {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-page .login-image {
+  height: 100%;
+  width: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (max-width: 1024px) {
+  .login-page .login-image {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.login-page .login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (max-width: 1024px) {
+  .login-page .login-container {
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 1;
+    margin: auto;
+    width: 60%;
+    padding: 25px 10px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .login-page .login-container {
+    width: 80%;
+  }
+}
+
+.login-page .login-container .login-logo {
+  position: absolute;
+  height: 150px;
+  top: 50px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .login-page .login-container .login-logo {
+    top: 100px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .login-page .login-container .login-logo {
+    top: 40px;
+    height: 100px;
+  }
+}
+
+.login-page .login-container .login-logo .cls-1 {
+  fill: #ffd09c;
+}
+
+.login-page .login-container h1 {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: #333;
+}
+
+.login-page .login-container p {
+  margin-top: 50px;
+  font-size: 13px;
+  color: #333;
+}
+
+.login-page .login-container .form-container {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 75%;
+}
+
+.login-page .login-container .form-container .MuiFormControl-root {
+  margin-bottom: 25px;
+}
+
+.login-page .login-container .form-container .MuiOutlinedInput-root fieldset {
+  border-color: #ffd09c;
+}
+
+.login-page .login-container .form-container .MuiFormLabel-root,
+.login-page .login-container .form-container .MuiFormLabel-root.Mui-focused {
+  color: #ffd09c;
+}
+
+.login-page .login-container .form-container .MuiButton-outlinedPrimary {
+  border-color: #ffd09c;
+  color: #ffd09c;
+}
+
+.login-page .login-container .form-container .MuiButton-outlinedPrimary:hover {
+  background-color: #ffd09c;
+  color: white;
+}
