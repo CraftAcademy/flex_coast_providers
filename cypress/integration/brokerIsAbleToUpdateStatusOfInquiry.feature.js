@@ -12,7 +12,7 @@ describe('Broker is able to update status of inquiry', () => {
       type: 'AUTHENTICATE',
       payload: 'Johhny Cage',
     })
-    cy.get('[data-cy=inquiry]').first().click()
+    cy.get('[data-cy=inquiry]').eq(4).click()
   })
   describe('Successfully', () => {
     beforeEach(() => {
