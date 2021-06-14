@@ -96,7 +96,6 @@
 
     .wrapper {
       display: flex;
-      align-items: center;
       margin-bottom: 25px;
       justify-content: space-between;
       @media only screen and (max-width: $smallScreen) {
@@ -139,15 +138,24 @@
 
       .notes-container {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
         height: 300px;
-        margin: 15px;
+        padding: 15px;
         width: 50%;
+        overflow-y: scroll;
         border: 1px solid lightgrey;
         @media only screen and (max-width: $smallScreen) {
           width: 90%;
           margin-bottom: 10px;
+        }
+
+        .notes-text {
+          font-size: 14px;
+          margin-bottom: 10px;
+
+          span {
+            font-size: 12px;
+          }
         }
       }
     }

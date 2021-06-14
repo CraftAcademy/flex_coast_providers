@@ -15,7 +15,6 @@ const LoginLandingPage = () => {
       <img src={loginImage} className='login-image' alt='office background' />
       <div className='login-container'>
         <ReactLogo className='login-logo' />
-        {/* <img src={logo} alt='logo' className='login-logo' /> */}
         <h1>Sign in</h1>
         <form onSubmit={handleLogin} className='form-container'>
           <TextField
