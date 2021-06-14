@@ -1,15 +1,7 @@
-// Variables
-$mainColor: rgb(97, 247, 210);
-$secondaryColor: rgb(255, 208, 156);
-$backgroundColor: #fff;
-$drawerWidth: 200px;
-$smallScreen: 820px;
-$tablet: 1024px;
-$mobile: 620px;
-$font: 'Nunito', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+@import './styles', './variables';
 
 // Globals
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
 
 * {
   margin: 0;
@@ -31,7 +23,7 @@ $font: 'Nunito', sans-serif;
   padding-left: $drawerWidth + 75px;
   padding-right: 75px;
 
-  @media only screen and (max-width: $smallScreen) {
+  @media only screen and (max-width: 1280px) {
     padding: 75px 10px 0 10px;
   }
 }

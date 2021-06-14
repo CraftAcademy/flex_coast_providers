@@ -19,11 +19,11 @@ import StatusFilter from './StatusFilter'
 
 const InquiryTable = () => {
   const { inquiries } = useSelector((state) => state)
-  const [sortDate, setSortDate] = useState(false)
-  const [status, setStatus] = useState({
+  const [sortDate, setSortDate] = useState(true)
+  const [statusFilter, setStatusFilter] = useState({
     pending: true,
     started: true,
-    done: true,
+    done: false,
   })
   const isSmall = useMediaQuery('(max-width:600px)')
 
@@ -34,7 +34,7 @@ const InquiryTable = () => {
   const inquiryRows = dataQuery(
     inquiries,
     'inquiry_status',
-    status,
+    statusFilter,
     sortDate
   ).map((item) => {
     return <InquiryRows key={item.id} item={item} />
@@ -60,7 +60,11 @@ const InquiryTable = () => {
                 <TableCell>Email</TableCell>
                 <TableCell>Move in date</TableCell>
                 <TableCell>
-                  Status <StatusFilter status={status} setStatus={setStatus} />
+                  Status{' '}
+                  <StatusFilter
+                    status={statusFilter}
+                    setStatus={setStatusFilter}
+                  />
                 </TableCell>
               </>
             )}

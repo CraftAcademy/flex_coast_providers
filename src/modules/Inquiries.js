@@ -9,6 +9,7 @@ const Inquiries = {
     } catch (error) {}
   },
   async update(id, status, setInquiryStatus) {
+    debugger
     let params = { inquiry: { status_action: status } }
     try {
       await axios.put(`/inquiries/${id}`, params, { headers: getHeaders() })

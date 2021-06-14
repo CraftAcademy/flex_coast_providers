@@ -49,7 +49,12 @@ const InquiryRows = ({ item }) => {
                   Amount of employees: <span>{item.size}</span>
                 </p>
                 <p data-cy='office-type'>
-                  Office type: <span>{item.office_type}</span>
+                  Office type:{' '}
+                  <span>
+                    {item.office_type === 'open_space'
+                      ? 'Open space'
+                      : item.office_type}
+                  </span>
                 </p>
                 <p data-cy='peers'>
                   Would like to sit with peers:
@@ -100,14 +105,14 @@ const InquiryRows = ({ item }) => {
                       <FormControlLabel
                         data-cy='status-btn-1'
                         disabled={inquiryStatus === 'done'}
-                        checked={inquiryStatus === 'pending'}
+                        checked={item.inquiry_status === 'pending'}
                         value='set_to_pending'
                         control={<Radio />}
                         label='Pending'
                       />
                       <FormControlLabel
                         data-cy='status-btn-2'
-                        checked={inquiryStatus === 'started'}
+                        checked={item.inquiry_status === 'started'}
                         value='start'
                         control={<Radio />}
                         label='Started'
@@ -115,7 +120,7 @@ const InquiryRows = ({ item }) => {
                       <FormControlLabel
                         data-cy='status-btn-3'
                         disabled={inquiryStatus === 'pending'}
-                        checked={inquiryStatus === 'done'}
+                        checked={item.inquiry_status === 'done'}
                         value='finish'
                         control={<Radio />}
                         label='Done'

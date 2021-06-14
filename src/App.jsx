@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import './styles/globals.css'
-import './styles/styles.css'
 import Sidebar from './components/Sidebar'
 import BrokerDashboard from './views/BrokerDashboard'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
@@ -12,7 +11,7 @@ import Authentication from './modules/Authentication'
 
 const App = () => {
   const { authenticated } = useSelector((state) => state)
-  const isSmall = useMediaQuery('(max-width:820px)')
+  const isSmall = useMediaQuery('(max-width:1280px)')
 
   useEffect(() => {
     Authentication.validateToken()
