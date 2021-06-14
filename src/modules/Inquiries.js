@@ -11,7 +11,8 @@ const Inquiries = {
   async update(id, status, setInquiryStatus) {
     let params = { inquiry: { status_action: status } }
     try {
-      await axios.put(`/inquiries/${id}`, params)
+      await axios.put(`/inquiries/${id}`, params, { headers: getHeaders() })
+
       setInquiryStatus(status)
       try {
         let response = await axios.get('/inquiries')
@@ -33,4 +34,8 @@ const setInquiries = (response) => {
     type: 'SET_INQUIRIES',
     payload: response.data.inquiries,
   })
+}
+
+const getHeaders = () => {
+  return JSON.parse(localStorage.getItem('J-tockAuth-Storage'))
 }

@@ -23,7 +23,12 @@ const Authentication = {
 
   async validateToken() {
     try {
-      await auth.validateToken(getHeaders())
+      let response = await auth.validateToken(getHeaders())
+
+      store.dispatch({
+        type: 'AUTHENTICATE',
+        payload: response.data.name,
+      })
     } catch (error) {}
   },
 }

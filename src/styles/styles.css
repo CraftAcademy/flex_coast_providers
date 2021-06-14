@@ -314,21 +314,23 @@
 }
 
 .login-page .login-container .login-logo {
+  height: 125px;
   position: absolute;
-  height: 150px;
-  top: 50px;
+  top: 40px;
 }
 
 @media only screen and (max-width: 1024px) {
   .login-page .login-container .login-logo {
-    top: 100px;
+    position: static;
+    height: 100px;
+    margin-bottom: 25px;
   }
 }
 
 @media only screen and (max-width: 620px) {
   .login-page .login-container .login-logo {
-    top: 40px;
-    height: 100px;
+    height: 80px;
+    margin-bottom: 25px;
   }
 }
 
@@ -382,3 +384,4 @@
   background-color: #ffd09c;
   color: white;
 }
+/*# sourceMappingURL=styles.css.map */
