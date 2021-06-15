@@ -67,7 +67,7 @@ describe('Broker is able to update status of inquiry', () => {
     })
 
     it('is expected to display an error message', () => {
-      cy.get('[data-cy=error-message]').should(
+      cy.get('[data-cy=error-snack]').should(
         'contain',
         'Something went wrong, Please try again later'
       )
@@ -75,7 +75,7 @@ describe('Broker is able to update status of inquiry', () => {
 
     it('is expected to hide error message after 5 seconds', () => {
       cy.wait(5000)
-      cy.get('[data-cy=error-message]').should('not.exist')
+      cy.get('[data-cy=error-snack]').should('not.exist')
     })
   })
 })

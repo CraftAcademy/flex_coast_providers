@@ -44,7 +44,7 @@ const InquiryTable = () => {
       <Table aria-label='simple table'>
         <TableHead>
           <TableRow className='table-header'>
-            <TableCell>Company</TableCell>
+            <TableCell>Broker</TableCell>
             <TableCell>
               Inquiry date{' '}
               <IconButton onClick={() => setSortDate(!sortDate)}>
@@ -58,7 +58,6 @@ const InquiryTable = () => {
             {!isSmall && (
               <>
                 <TableCell>Email</TableCell>
-                <TableCell>Move in date</TableCell>
                 <TableCell>
                   Status{' '}
                   <StatusFilter

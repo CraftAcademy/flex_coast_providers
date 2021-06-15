@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
 import Collapse from '@material-ui/core/Collapse'
@@ -9,14 +8,16 @@ import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Inquiries from '../modules/Inquiries'
-import ErrorMessage from './ErrorMessage'
 
 const InquiryRows = ({ item }) => {
-  const { error, message } = useSelector((state) => state)
   const [open, setOpen] = useState(false)
+  const [noteInput, setNoteInput] = useState()
   const isSmall = useMediaQuery('(max-width:600px)')
   const [inquiryStatus, setInquiryStatus] = useState(item.inquiry_status)
 
+  const createNoteHandler = () => {
+    Inquiries.createNote(item.id, noteInput, setNoteInput)
+  }
   const statusHandler = (value) => {
     Inquiries.update(item.id, value, setInquiryStatus)
   }
@@ -24,12 +25,12 @@ const InquiryRows = ({ item }) => {
   return (
     <>
       <TableRow onClick={() => setOpen(!open)} hover data-cy='inquiry'>
-        <TableCell data-cy='company'>{item.company}</TableCell>
+      {item.broker ? 
+        <TableCell data-cy='broker-header'>{item.broker.name}</TableCell> : <TableCell>Not assigned</TableCell> }
         <TableCell data-cy='inquiry-date'>{item.inquiry_date}</TableCell>
         {!isSmall && (
           <>
             <TableCell data-cy='email'>{item.email}</TableCell>
-            <TableCell data-cy='start-date'>{item.start_date}</TableCell>
             <TableCell data-cy='inquiry status'>
               {item.inquiry_status}
             </TableCell>
@@ -66,12 +67,13 @@ const InquiryRows = ({ item }) => {
                 </p>
                 <p data-cy='locations'>
                   Locations:
-                  {item.locations.map((location, index) => (
-                    <div key={index}>
-                      <span>{location}</span>
-                      <br />
-                    </div>
-                  ))}
+                  {Array.isArray(item.locations) &&
+                    item.locations.map((location, index) => (
+                      <div key={index}>
+                        <span>{location}</span>
+                        <br />
+                      </div>
+                    ))}
                 </p>
                 <p data-cy='phone'>
                   Phone number: <span>{item.phone}</span>
@@ -128,21 +130,38 @@ const InquiryRows = ({ item }) => {
                     </RadioGroup>
                   </FormControl>
                 </div>
-                {error && <ErrorMessage text={message} />}
               </div>
-              <div className='notes-container'>
-                {item.notes.map((note) => {
-                  return (
-                    <p data-cy='note' className='notes-text' key={note.id}>
-                      {note.body}
-                      {', '}
-                      <span>
-                        by:{' '}
-                        {note.creator.name ? note.creator.name : note.creator}
-                      </span>
-                    </p>
-                  )
-                })}
+              <div className='note-info-container'>
+                <div className='notes-container'>
+                  {item.notes.map((note) => {
+                    return (
+                      <>
+                        <p data-cy='note-meta' className='notes-meta'>
+                          {note.date}, by:{' '}
+                          {note.creator.name ? note.creator.name : note.creator}
+                        </p>
+                        <p data-cy='note' className='notes-text' key={note.id}>
+                          {note.body}
+                        </p>
+                      </>
+                    )
+                  })}
+                </div>
+                <textarea
+                  className='notes-input'
+                  value={noteInput}
+                  type='text'
+                  name='notes'
+                  placeholder='Write a note'
+                  data-cy='note-input'
+                  onChange={(event) => setNoteInput(event.target.value)}
+                />
+                <button
+                  className='notes-button'
+                  data-cy='note-submit-btn'
+                  onClick={() => createNoteHandler()}>
+                  Create
+                </button>
               </div>
             </div>
           </Collapse>

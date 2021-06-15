@@ -1,23 +1,25 @@
 import axios from 'axios'
 import store from '../state/store/configureStore'
+import errorHandler from './ErrorHandler'
 
 const Inquiries = {
   async index() {
     try {
-      let response = await axios.get('/inquiries')
-      setInquiries(response)
-    } catch (error) {}
+      setInquiries()
+    } catch (error) {
+      errorHandler(error)
+    }
   },
   async update(id, status, setInquiryStatus) {
     let params = { inquiry: { status_action: status } }
     try {
       await axios.put(`/inquiries/${id}`, params, { headers: getHeaders() })
-
       setInquiryStatus(status)
       try {
-        let response = await axios.get('/inquiries')
-        setInquiries(response)
-      } catch (error) {}
+        setInquiries()
+      } catch (error) {
+        errorHandler(error)
+      }
     } catch (error) {
       store.dispatch({
         type: 'SET_ERROR_MESSAGE',
@@ -25,11 +27,36 @@ const Inquiries = {
       })
     }
   },
+
+  async createNote(id, noteInput, setNoteInput) {
+    let params = { note: { body: noteInput } }
+    try {
+      await axios.post(`/inquiries/${id}/notes`, params, {
+        headers: getHeaders(),
+      })
+      setNoteInput('')
+      try {
+        setInquiries()
+      } catch (error) {
+        errorHandler(error)
+      }
+    } catch (error) {
+      if (error.response?.status === 422) {
+        store.dispatch({
+          type: 'SET_ERROR_MESSAGE',
+          payload: "Let's not save an empty note!",
+        })
+      } else {
+        errorHandler(error)
+      }
+    }
+  },
 }
 
 export default Inquiries
 
-const setInquiries = (response) => {
+const setInquiries = async () => {
+  let response = await axios.get('/inquiries')
   store.dispatch({
     type: 'SET_INQUIRIES',
     payload: response.data.inquiries,

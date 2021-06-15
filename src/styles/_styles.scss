@@ -112,9 +112,13 @@
         }
         p {
           border-bottom: 1px solid lightgrey;
-
           div {
             display: inline;
+          }
+          span {
+            @media only screen and (max-width: $smallScreen) {
+              margin-right: 30px;
+            }
           }
         }
         span {
@@ -135,26 +139,61 @@
           flex-direction: row;
         }
       }
-
-      .notes-container {
-        display: flex;
-        flex-direction: column;
-        height: 300px;
-        padding: 15px;
+      .note-info-container {
         width: 50%;
-        overflow-y: scroll;
-        border: 1px solid lightgrey;
         @media only screen and (max-width: $smallScreen) {
-          width: 90%;
-          margin-bottom: 10px;
+          width: 100%;
         }
 
-        .notes-text {
-          font-size: 14px;
-          margin-bottom: 10px;
-
-          span {
+        .notes-container {
+          display: flex;
+          flex-direction: column;
+          height: 300px;
+          padding: 15px;
+          width: 95%;
+          overflow-y: scroll;
+          border: 1px solid lightgrey;
+          margin-bottom: 15px;
+          @media only screen and (max-width: $smallScreen) {
+            width: 90%;
+            margin-bottom: 10px;
+          }
+          .notes-meta {
+            font-style: italic;
             font-size: 12px;
+          }
+
+          .notes-text {
+            font-size: 14px;
+            margin-bottom: 8px;
+          }
+        }
+        .notes-input {
+          width: 90%;
+          border-radius: 6px;
+          padding: 10px;
+          margin-bottom: 15px;
+          outline: none;
+          border: 2px solid $secondaryColor;
+          background-color: transparent;
+
+          &:focus {
+            background-color: #fff;
+          }
+        }
+
+        .notes-button {
+          color: #333;
+          cursor: pointer;
+          display: block;
+          border-radius: 6px;
+          border: 2px solid $secondaryColor;
+          padding: 10px;
+          background-color: transparent;
+          transition: 0.3s;
+          &:hover {
+            background-color: $secondaryColor;
+            border: 2px solid $secondaryColor;
           }
         }
       }

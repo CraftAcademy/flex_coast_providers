@@ -4,6 +4,7 @@ import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 import store from '../state/store/configureStore'
 import Snackbar from '@material-ui/core/Snackbar'
+
 const ErrorSnackbar = () => {
   const { error, message } = useSelector((state) => state)
 
