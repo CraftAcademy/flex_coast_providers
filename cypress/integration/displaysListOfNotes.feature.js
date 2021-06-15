@@ -23,18 +23,18 @@ describe('Client displays list of notes on each Inquiry', () => {
 
     it('is expected to display the expected content', () => {
       cy.get('[data-cy=inquiry-collapsible-cell]').within(() => {
+        cy.get('[data-cy=note-meta]').first().should('contain', 'by: System')
+        cy.get('[data-cy=note-meta]').eq(1).should('contain', 'by: John Doe')
+        cy.get('[data-cy=note-meta]').eq(2).should('contain', 'by: John Doe')
         cy.get('[data-cy=note]')
           .first()
           .should('contain', 'This inquiry was submitted 14 Jun 2021')
-          .and('contain', 'by: System')
         cy.get('[data-cy=note]')
           .eq(1)
           .should('contain', 'This inquiry was started 14 Jun 2021')
-          .and('contain', 'by: John Doe')
         cy.get('[data-cy=note]')
           .eq(2)
           .should('contain', 'This inquiry was finished 14 Jun 2021')
-          .and('contain', 'by: John Doe')
       })
     })
   })

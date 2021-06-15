@@ -146,6 +146,12 @@
   display: inline;
 }
 
+@media only screen and (max-width: 820px) {
+  .table .MuiTableCell-root.collapsible-cell .wrapper .info-container p span {
+    margin-right: 30px;
+  }
+}
+
 .table .MuiTableCell-root.collapsible-cell .wrapper .info-container span {
   float: right;
   font-weight: bold;
@@ -173,7 +179,17 @@
           flex-direction: row;
 }
 
-.table .MuiTableCell-root.collapsible-cell .wrapper .notes-container {
+.table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container {
+  width: 50%;
+}
+
+@media only screen and (max-width: 820px) {
+  .table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container {
+    width: 100%;
+  }
+}
+
+.table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container .notes-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,25 +199,58 @@
           flex-direction: column;
   height: 300px;
   padding: 15px;
-  width: 50%;
+  width: 95%;
   overflow-y: scroll;
   border: 1px solid lightgrey;
+  margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 820px) {
-  .table .MuiTableCell-root.collapsible-cell .wrapper .notes-container {
+  .table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container .notes-container {
     width: 90%;
     margin-bottom: 10px;
   }
 }
 
-.table .MuiTableCell-root.collapsible-cell .wrapper .notes-container .notes-text {
-  font-size: 14px;
-  margin-bottom: 10px;
+.table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container .notes-container .notes-meta {
+  font-style: italic;
+  font-size: 12px;
 }
 
-.table .MuiTableCell-root.collapsible-cell .wrapper .notes-container .notes-text span {
-  font-size: 12px;
+.table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container .notes-container .notes-text {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container .notes-input {
+  width: 90%;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 15px;
+  outline: none;
+  border: 2px solid #ffd09c;
+  background-color: transparent;
+}
+
+.table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container .notes-input:focus {
+  background-color: #fff;
+}
+
+.table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container .notes-button {
+  color: #333;
+  cursor: pointer;
+  display: block;
+  border-radius: 6px;
+  border: 2px solid #ffd09c;
+  padding: 10px;
+  background-color: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.table .MuiTableCell-root.collapsible-cell .wrapper .note-info-container .notes-button:hover {
+  background-color: #ffd09c;
+  border: 2px solid #ffd09c;
 }
 
 .login-page {

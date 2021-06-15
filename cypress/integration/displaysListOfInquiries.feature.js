@@ -22,8 +22,7 @@ describe('User can see the inquiries', () => {
         .eq(4)
         .within(() => {
           cy.get('[data-cy=email]').should('contain', 'lucy@example.com')
-          cy.get('[data-cy=company]').should('contain', 'Flex Coast')
-          cy.get('[data-cy=start-date]').should('contain', '21 Jun 2021')
+          cy.get('[data-cy=broker]').should('not.exist')
           cy.get('[data-cy=inquiry-date]').should('contain', '06 Jun 2021')
         })
     })
