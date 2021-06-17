@@ -23,7 +23,7 @@ const InquiryTable = () => {
   const [statusFilter, setStatusFilter] = useState({
     pending: true,
     started: true,
-    done: false,
+    done: true,
   })
   const isSmall = useMediaQuery('(max-width:600px)')
 
@@ -37,7 +37,9 @@ const InquiryTable = () => {
     statusFilter,
     sortDate
   ).map((item) => {
-    return <InquiryRows key={item.id} item={item} />
+    return (
+      <InquiryRows key={item.id} item={item} notes={item.notes.reverse()} />
+    )
   })
   return (
     <TableContainer className='table' component={Paper} elevation={3}>

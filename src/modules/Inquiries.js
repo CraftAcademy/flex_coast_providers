@@ -10,11 +10,17 @@ const Inquiries = {
       errorHandler(error)
     }
   },
-  async update(id, status, setInquiryStatus) {
-    let params = { inquiry: { status_action: status } }
+  async update(id, newStatus, oldStatus, setInquiryStatus) {
+    const fromDoneToStarted =
+      newStatus === 'start' && (oldStatus === 'done' || oldStatus === 'finish')
+    let params = {
+      inquiry: {
+        status_action: fromDoneToStarted ? 'set_to_started' : newStatus,
+      },
+    }
     try {
       await axios.put(`/inquiries/${id}`, params, { headers: getHeaders() })
-      setInquiryStatus(status)
+      setInquiryStatus(newStatus)
       try {
         setInquiries()
       } catch (error) {
