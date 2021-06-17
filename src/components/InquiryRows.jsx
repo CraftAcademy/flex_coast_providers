@@ -9,9 +9,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Inquiries from '../modules/Inquiries'
 
-const InquiryRows = ({ item }) => {
+const InquiryRows = ({ item, notes }) => {
   const [open, setOpen] = useState(false)
-  const [noteInput, setNoteInput] = useState()
+  const [noteInput, setNoteInput] = useState('')
   const isSmall = useMediaQuery('(max-width:600px)')
   const [inquiryStatus, setInquiryStatus] = useState(item.inquiry_status)
 
@@ -25,8 +25,11 @@ const InquiryRows = ({ item }) => {
   return (
     <>
       <TableRow onClick={() => setOpen(!open)} hover data-cy='inquiry'>
-      {item.broker ? 
-        <TableCell data-cy='broker-header'>{item.broker.name}</TableCell> : <TableCell>Not assigned</TableCell> }
+        {item.broker ? (
+          <TableCell data-cy='broker-header'>{item.broker.name}</TableCell>
+        ) : (
+          <TableCell>Not assigned</TableCell>
+        )}
         <TableCell data-cy='inquiry-date'>{item.inquiry_date}</TableCell>
         {!isSmall && (
           <>
@@ -133,9 +136,9 @@ const InquiryRows = ({ item }) => {
               </div>
               <div className='note-info-container'>
                 <div className='notes-container'>
-                  {item.notes.map((note) => {
+                  {notes.map((note) => {
                     return (
-                      <>
+                      <div key={note.id}>
                         <p data-cy='note-meta' className='notes-meta'>
                           {note.date}, by:{' '}
                           {note.creator.name ? note.creator.name : note.creator}
@@ -143,7 +146,7 @@ const InquiryRows = ({ item }) => {
                         <p data-cy='note' className='notes-text' key={note.id}>
                           {note.body}
                         </p>
-                      </>
+                      </div>
                     )
                   })}
                 </div>

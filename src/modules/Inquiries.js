@@ -11,7 +11,8 @@ const Inquiries = {
     }
   },
   async update(id, newStatus, oldStatus, setInquiryStatus) {
-    const fromDoneToStarted = newStatus === 'start' && oldStatus === 'done'
+    const fromDoneToStarted =
+      newStatus === 'start' && (oldStatus === 'done' || oldStatus === 'finish')
     let params = {
       inquiry: {
         status_action: fromDoneToStarted ? 'set_to_started' : newStatus,
