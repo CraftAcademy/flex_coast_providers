@@ -35,12 +35,12 @@ describe('Brokers have their names attached to initiated inquiries', () => {
     })
 
     it('is expected to take broker to dashboard', () => {
-      cy.get('[data-cy=inquiry]').should('have.length', 5)
+      cy.get('[data-cy=inquiry]').should('have.length', 6)
       cy.get('[data-cy=broker-name]').should('contain', 'Mr. Johnny')
     })
 
     it('is expected to attach brokers name to an inquiry if they changes status', () => {
-      cy.get('[data-cy=inquiry]').eq(4).click()
+      cy.get('[data-cy=inquiry]').eq(5).click()
       cy.get('[data-cy=broker]').should('not.exist')
 
       cy.get('[data-cy=inquiry-collapsible-cell]').within(() => {
