@@ -17,6 +17,11 @@ const rootReducer = (state, action) => {
         error: false,
         message: '',
       }
+    case 'LOG_OUT':
+      return {
+        ...state,
+        authenticated: false,
+      }
     case 'AUTHENTICATE':
       return {
         ...state,
