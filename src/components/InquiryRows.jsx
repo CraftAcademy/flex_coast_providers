@@ -19,7 +19,7 @@ const InquiryRows = ({ item }) => {
     Inquiries.createNote(item.id, noteInput, setNoteInput)
   }
   const statusHandler = (value) => {
-    Inquiries.update(item.id, value, setInquiryStatus)
+    Inquiries.update(item.id, value, inquiryStatus, setInquiryStatus)
   }
 
   return (
