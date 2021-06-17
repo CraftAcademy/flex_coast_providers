@@ -8,6 +8,16 @@ describe('Broker is able to logout after being logged in', () => {
       }
     )
     cy.intercept(
+      'GET',
+      'https://flex-coast-api-development.herokuapp.com/api/auth/validate_token**',
+      { fixture: 'broker.json', headers: { uid: 'johnny@cage.com' } }
+    )
+    cy.intercept(
+      'POST',
+      'https://flex-coast-api-development.herokuapp.com/api/auth/sign_in',
+      { fixture: 'broker.json' }
+    )
+    cy.intercept(
       'DELETE',
       'https://flex-coast-api-development.herokuapp.com/api/auth/sign_out',
       {
@@ -15,10 +25,9 @@ describe('Broker is able to logout after being logged in', () => {
       }
     )
     cy.visit('/')
-    cy.window().its('store').invoke('dispatch', {
-      type: 'AUTHENTICATE',
-      payload: 'Johhny Cage',
-    })
+    cy.get('[data-cy=email-field]').type('johnny@cage.com')
+    cy.get('[data-cy=password-field]').type('password')
+    cy.get('[data-cy=login-btn]').click()
   })
 
   it('is expected to log the user out', () => {

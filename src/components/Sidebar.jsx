@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import Divider from '@material-ui/core/Divider'
 import MailIcon from '@material-ui/icons/Mail'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import Authentication from '../modules/Authentication'
 import SidebarIcon from './SidebarIcon'
 import { ReactComponent as ReactLogo } from '../assets/logo_4.svg'
 
@@ -23,7 +24,10 @@ const Sidebar = () => {
       </List>
       <Divider />
       <List>
-        <SidebarIcon text='Log out' onClick={() => Authentication.signOut()}>
+        <SidebarIcon
+          dataCy='logout-button'
+          text='Log out'
+          onClick={() => Authentication.signOut()}>
           <ExitToAppIcon />
         </SidebarIcon>
       </List>

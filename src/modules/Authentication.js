@@ -21,6 +21,17 @@ const Authentication = {
     }
   },
 
+  async signOut() {
+    try {
+      await auth.signOut()
+      store.dispatch({
+        type: 'LOG_OUT',
+      })
+    } catch (error) {
+      errorHandler(error)
+    }
+  },
+
   async validateToken() {
     try {
       let response = await auth.validateToken(getHeaders())
