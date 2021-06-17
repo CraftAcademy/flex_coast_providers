@@ -16,10 +16,15 @@ const errorHandler = (error) => {
       type: 'SET_ERROR_MESSAGE',
       payload: error.response.data.error_message,
     })
-  } else {
+  } else if (error.message) {
     store.dispatch({
       type: 'SET_ERROR_MESSAGE',
       payload: error.message,
+    })
+  } else {
+    store.dispatch({
+      type: 'SET_ERROR_MESSAGE',
+      payload: error,
     })
   }
 }
