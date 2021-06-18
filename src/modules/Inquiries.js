@@ -10,6 +10,7 @@ const Inquiries = {
       errorHandler(error)
     }
   },
+
   async update(id, newStatus, oldStatus, setInquiryStatus) {
     const fromDoneToStarted =
       newStatus === 'start' && (oldStatus === 'done' || oldStatus === 'finish')
@@ -55,6 +56,21 @@ const Inquiries = {
       } else {
         errorHandler(error)
       }
+    }
+  },
+
+  async getAnalytics() {
+    try {
+      let response = await axios.get('/analytics')
+      store.dispatch({
+        type: 'SET_ANALYTICS',
+        payload: response.data.statistics,
+      })
+    } catch (error) {
+      store.dispatch({
+        type: 'SET_ERROR_MESSAGE',
+        payload: 'Something went wrong, please try again later',
+      })
     }
   },
 

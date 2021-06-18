@@ -1,0 +1,52 @@
+{
+  "statistics": {
+      "visits": {
+          "total": 110
+      },
+      "events": {
+          "answers": [
+              {
+                  "value": 110,
+                  "name": "total"
+              },
+              {
+                  "name": "size",
+                  "value": 85
+              },
+              {
+                  "name": "office_type",
+                  "value": 70
+              },
+              {
+                  "name": "email",
+                  "value": 50
+              },
+              {
+                  "name": "peers",
+                  "value": 48
+              },
+              {
+                  "name": "locations",
+                  "value": 47
+              },
+              {
+                  "name": "flexible",
+                  "value": 40
+              },
+              {
+                  "name": "start_date",
+                  "value": 40
+              },
+              {
+                  "name": "phone",
+                  "value": 30
+              },
+              {
+                  "name": "submit",
+                  "value": 30
+              }
+          ],
+          "calls": 17
+      }
+  }
+}
