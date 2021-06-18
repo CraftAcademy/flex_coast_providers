@@ -11,6 +11,18 @@ const rootReducer = (state, action) => {
         error: true,
         message: action.payload,
       }
+    case 'SET_SUCCESS':
+      return {
+        ...state,
+        success: true,
+        message: action.payload,
+      }
+    case 'RESET_SUCCESS':
+      return {
+        ...state,
+        success: false,
+        message: '',
+      }
     case 'RESET_ERROR':
       return {
         ...state,
