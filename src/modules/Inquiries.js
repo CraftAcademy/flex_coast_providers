@@ -51,6 +51,20 @@ const Inquiries = {
       }
     }
   },
+
+  async export(id) {
+    try {
+      let response = await axios.post(`/inquiries/${id}/hubspot`, {
+        headers: getHeaders(),
+      })
+      store.dispatch({
+        type: 'SET_SUCCESS',
+        payload: response.data.message,
+      })
+    } catch (error) {
+      errorHandler(error)
+    }
+  },
 }
 
 export default Inquiries

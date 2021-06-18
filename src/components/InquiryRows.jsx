@@ -22,11 +22,18 @@ const InquiryRows = ({ item }) => {
     Inquiries.update(item.id, value, setInquiryStatus)
   }
 
+  const exportHandler = () => {
+    Inquiries.export(item.id)
+  }
+
   return (
     <>
       <TableRow onClick={() => setOpen(!open)} hover data-cy='inquiry'>
-      {item.broker ? 
-        <TableCell data-cy='broker-header'>{item.broker.name}</TableCell> : <TableCell>Not assigned</TableCell> }
+        {item.broker ? (
+          <TableCell data-cy='broker-header'>{item.broker.name}</TableCell>
+        ) : (
+          <TableCell>Not assigned</TableCell>
+        )}
         <TableCell data-cy='inquiry-date'>{item.inquiry_date}</TableCell>
         {!isSmall && (
           <>
@@ -156,12 +163,20 @@ const InquiryRows = ({ item }) => {
                   data-cy='note-input'
                   onChange={(event) => setNoteInput(event.target.value)}
                 />
-                <button
-                  className='notes-button'
-                  data-cy='note-submit-btn'
-                  onClick={() => createNoteHandler()}>
-                  Create
-                </button>
+                <div className='button-group'>
+                  <button
+                    className='notes-button'
+                    data-cy='note-submit-btn'
+                    onClick={() => createNoteHandler()}>
+                    Create
+                  </button>
+                  <button
+                    className='notes-button'
+                    data-cy='export-button'
+                    onClick={() => exportHandler()}>
+                    Export
+                  </button>
+                </div>
               </div>
             </div>
           </Collapse>
