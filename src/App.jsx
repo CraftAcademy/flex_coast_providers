@@ -8,6 +8,7 @@ import PhoneSidebar from './components/PhoneSidebar'
 import LoginLandingPage from './components/LoginLandingPage'
 import ErrorSnackbar from './components/ErrorSnackbar'
 import Authentication from './modules/Authentication'
+import SuccessSnackbar from './components/SuccessSnackbar'
 
 const App = () => {
   const { authenticated } = useSelector((state) => state)
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <>
+      <SuccessSnackbar />
       <ErrorSnackbar />
       {authenticated ? (
         <>
