@@ -72,7 +72,18 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  height: calc(100vh - 75px);
+}
+
+.analytics-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .table {
@@ -402,14 +413,15 @@
   background-color: #fff;
 }
 
-.view-container, .dashboard-container {
+.view-container, .dashboard-container, .analytics-container {
   padding-top: 75px;
   padding-left: 275px;
   padding-right: 75px;
+  height: calc(100vh - 75px);
 }
 
 @media only screen and (max-width: 1280px) {
-  .view-container, .dashboard-container {
+  .view-container, .dashboard-container, .analytics-container {
     padding: 75px 10px 0 10px;
   }
 }

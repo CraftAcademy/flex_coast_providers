@@ -60,7 +60,13 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: calc(100vh - 75px);
+  @extend .view-container;
+}
+
+.analytics-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   @extend .view-container;
 }
 
