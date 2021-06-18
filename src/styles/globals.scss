@@ -71,5 +71,12 @@
 
   button {
     margin: 5px;
+    display: flex;
+    align-items: center;
+
+    svg{
+      margin-bottom: -3px;
+      margin-right: 3px;
+    }
   }
 }
