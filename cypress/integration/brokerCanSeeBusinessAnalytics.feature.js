@@ -30,7 +30,7 @@ describe('Broker can see business analytics', () => {
     })
 
     it('is expected to display a funnel chart', () => {
-      cy.get('[data-cy=funnel-chart]').should('be.visible')
+      cy.get('[data-cy=wizard-chart]').should('be.visible')
     })
 
     it('is expected to display a total visit stat card', () => {

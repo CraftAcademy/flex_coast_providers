@@ -68,11 +68,54 @@
   @extend .view-container;
 }
 
+// Analytics dashboard
+
 .analytics-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   @extend .view-container;
+
+  .stat-container {
+    &-1 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 75px;
+    }
+  }
+  .stat-card {
+    background-color: $secondaryColor;
+    width: 230px;
+    height: 200px;
+    margin: 5px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    svg {
+      border: 1px solid #333;
+      padding: 25px;
+    }
+
+    h1 {
+      font-size: 25px;
+    }
+  }
+
+  .wizard-chart-container {
+    background-color: $secondaryColor;
+    width: 60%;
+    padding: 25px;
+
+    h1 {
+      font-size: 25px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
 }
 
 // Inquiry table

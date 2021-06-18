@@ -9,34 +9,24 @@ import {
 
 const WizardChart = ({ data }) => {
   const addsColor = (dataArr) => {
-    let colors = [
-      'rgba(255, 208, 156, 0.1)',
-      'rgba(255, 208, 156, 0.2)',
-      'rgba(255, 208, 156, 0.3)',
-      'rgba(255, 208, 156, 0.4)',
-      'rgba(255, 208, 156, 0.5)',
-      'rgba(255, 208, 156, 0.6)',
-      'rgba(255, 208, 156, 0.7)',
-      'rgba(255, 208, 156, 0.8)',
-      'rgba(255, 208, 156, 0.9)',
-      'rgba(255, 208, 156, 1)',
-    ]
-
     return dataArr?.map((object, index) => {
-      return { ...object, fill: colors[index] }
+      return { ...object, fill: `rgba(164, 227, 255, ${(index + 1) / 10})` }
     })
   }
-
   return (
-    <ResponsiveContainer width={'50%'} height={350}>
-      <FunnelChart >
+    <ResponsiveContainer width='100%' height={350} data-cy='wizard-chart'>
+      <FunnelChart>
         <Tooltip />
-        <Funnel dataKey='value' data={addsColor(data)} isAnimationActive>
+        <Funnel
+          dataKey='value'
+          data={addsColor(data)}
+          isAnimationActive={false}>
           <LabelList
             position='right'
-            fill='#000'
+            fill='#333'
             stroke='none'
             dataKey='name'
+            offset={5}
           />
         </Funnel>
       </FunnelChart>
