@@ -22,7 +22,7 @@ const Sidebar = () => {
         <SidebarIcon text='Dashboard' to='/'>
           <MailIcon />
         </SidebarIcon>
-        <SidebarIcon text='Analytics' to='/analytics'>
+        <SidebarIcon dataCy='menu-analytics' text='Analytics' to='/analytics'>
           <AssessmentIcon />
         </SidebarIcon>
       </List>

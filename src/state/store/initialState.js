@@ -3,6 +3,7 @@ const initialState = {
   authenticated: false,
   name: '',
   message: '',
+  analytics: {},
 }
 
 export default initialState
