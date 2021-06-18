@@ -29,8 +29,22 @@
   }
 }
 
-.MuiSnackbarContent-root {
-  background-color: $secondaryColor !important;
+.error-snackbar {
+  .MuiSnackbarContent-root {
+    background-color: $secondaryColor !important;
+  }
+}
+
+.success-snackbar {
+  .MuiSnackbarContent-root {
+    background-color: #98ff98 !important;
+  }
+}
+
+.snack-container {
+  p {
+    color: black;
+  }
 }
 
 .error-snack-container {
@@ -50,4 +64,20 @@
 .logo {
   margin: 10px;
   margin-bottom: 25px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+
+    svg{
+      margin-bottom: -3px;
+      margin-right: 3px;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import store from '../state/store/configureStore'
 
 const errorHandler = (error) => {
+
   if (error.response?.data?.data?.errors) {
     store.dispatch({
       type: 'SET_ERROR_MESSAGE',

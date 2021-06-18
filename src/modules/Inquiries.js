@@ -10,6 +10,7 @@ const Inquiries = {
       errorHandler(error)
     }
   },
+
   async update(id, newStatus, oldStatus, setInquiryStatus) {
     const fromDoneToStarted =
       newStatus === 'start' && (oldStatus === 'done' || oldStatus === 'finish')
@@ -70,6 +71,26 @@ const Inquiries = {
         type: 'SET_ERROR_MESSAGE',
         payload: 'Something went wrong, please try again later',
       })
+    }
+  },
+
+  async export(id) {
+    try {
+      let response = await axios.post(`/inquiries/${id}/hubspot`, {
+        headers: getHeaders(),
+      })
+      store.dispatch({
+        type: 'SET_SUCCESS',
+        payload: response.data.message,
+      })
+    } catch (error) {
+      if (error.response?.status === 409) {
+        store.dispatch({
+          type: 'SET_ERROR_MESSAGE',
+          payload: error.response.data.error_message,
+        })
+      }
+      errorHandler(error)
     }
   },
 }

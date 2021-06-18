@@ -10,6 +10,7 @@ import ErrorSnackbar from './components/ErrorSnackbar'
 import Authentication from './modules/Authentication'
 import { Route, Switch } from 'react-router-dom'
 import AnalyticsDashboard from './views/AnalyticsDashboard'
+import SuccessSnackbar from './components/SuccessSnackbar'
 
 const App = () => {
   const { authenticated } = useSelector((state) => state)
@@ -21,6 +22,7 @@ const App = () => {
 
   return (
     <>
+      <SuccessSnackbar />
       <ErrorSnackbar />
       {authenticated ? (
         <>

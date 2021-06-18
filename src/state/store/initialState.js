@@ -4,6 +4,8 @@ const initialState = {
   name: '',
   message: '',
   analytics: {},
+  error: false,
+  success: false
 }
 
 export default initialState

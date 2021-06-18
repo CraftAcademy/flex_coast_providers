@@ -8,6 +8,7 @@ import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Inquiries from '../modules/Inquiries'
+import { ReactComponent as HubSpotLogo } from '../assets/hubspot-1.svg'
 
 const InquiryRows = ({ item, notes }) => {
   const [open, setOpen] = useState(false)
@@ -20,6 +21,10 @@ const InquiryRows = ({ item, notes }) => {
   }
   const statusHandler = (value) => {
     Inquiries.update(item.id, value, inquiryStatus, setInquiryStatus)
+  }
+
+  const exportHandler = () => {
+    Inquiries.export(item.id)
   }
 
   return (
@@ -159,12 +164,21 @@ const InquiryRows = ({ item, notes }) => {
                   data-cy='note-input'
                   onChange={(event) => setNoteInput(event.target.value)}
                 />
-                <button
-                  className='notes-button'
-                  data-cy='note-submit-btn'
-                  onClick={() => createNoteHandler()}>
-                  Create
-                </button>
+                <div className='button-group'>
+                  <button
+                    className='notes-button'
+                    data-cy='note-submit-btn'
+                    onClick={() => createNoteHandler()}>
+                    Create
+                  </button>
+                  <button
+                    className='notes-button'
+                    data-cy='export-button'
+                    onClick={() => exportHandler()}>
+                    <HubSpotLogo />
+                    Export
+                  </button>
+                </div>
               </div>
             </div>
           </Collapse>
