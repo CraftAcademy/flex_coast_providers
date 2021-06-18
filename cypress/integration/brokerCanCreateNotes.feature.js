@@ -37,7 +37,7 @@ describe('Brokers can create new notes', () => {
             name: 'John Doe',
           },
         }
-        fixture.inquiries[5].notes.unshift(newNote)
+        fixture.inquiries[5].notes.push(newNote)
         cy.intercept(
           'GET',
           'https://flex-coast-api-development.herokuapp.com/api/inquiries',

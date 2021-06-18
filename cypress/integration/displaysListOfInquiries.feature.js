@@ -15,11 +15,11 @@ describe('User can see the inquiries', () => {
   })
   describe('Successfully', () => {
     it('is expected to show three inquiries ', () => {
-      cy.get('[data-cy=inquiry]').should('have.length', 5)
+      cy.get('[data-cy=inquiry]').should('have.length', 6)
     })
     it('is expected to show the content of the inquiries', () => {
       cy.get('[data-cy=inquiry]')
-        .eq(4)
+        .eq(5)
         .within(() => {
           cy.get('[data-cy=email]').should('contain', 'lucy@example.com')
           cy.get('[data-cy=broker]').should('not.exist')
@@ -27,7 +27,7 @@ describe('User can see the inquiries', () => {
         })
     })
     it('is expected to show additional content on click', () => {
-      cy.get('[data-cy=inquiry]').eq(4).click()
+      cy.get('[data-cy=inquiry]').eq(5).click()
       cy.get('[data-cy=inquiry-collapsible-cell]').within(() => {
         cy.get('[data-cy=size]').find('span').should('contain', '1')
         cy.get('[data-cy=office-type]').find('span').should('contain', 'office')
