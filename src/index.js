@@ -1,10 +1,11 @@
 import React from 'react'
+import App from './App'
 import { Provider } from 'react-redux'
 import store from './state/store/configureStore'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 axios.defaults.baseURL =
   process.env.REACT_APP_STAGE === 'production'
@@ -12,9 +13,11 @@ axios.defaults.baseURL =
     : 'https://flex-coast-api-development.herokuapp.com/api'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Router>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Router>,
 
   document.getElementById('root')
 )

@@ -12,9 +12,9 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
-import Inquiries from '../modules/Inquiries'
 import InquiryRows from './InquiryRows'
 import { dataQuery } from '../modules/TableServices'
+import Inquiries from '../modules/Inquiries'
 import StatusFilter from './StatusFilter'
 
 const InquiryTable = () => {

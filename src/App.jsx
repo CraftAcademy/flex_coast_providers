@@ -8,6 +8,8 @@ import PhoneSidebar from './components/PhoneSidebar'
 import LoginLandingPage from './components/LoginLandingPage'
 import ErrorSnackbar from './components/ErrorSnackbar'
 import Authentication from './modules/Authentication'
+import { Route, Switch } from 'react-router-dom'
+import AnalyticsDashboard from './views/AnalyticsDashboard'
 import SuccessSnackbar from './components/SuccessSnackbar'
 
 const App = () => {
@@ -25,7 +27,10 @@ const App = () => {
       {authenticated ? (
         <>
           {isSmall ? <PhoneSidebar /> : <Sidebar />}
-          <BrokerDashboard />
+          <Switch>
+            <Route exact path='/' component={BrokerDashboard} />
+            <Route exact path='/analytics' component={AnalyticsDashboard} />
+          </Switch>
         </>
       ) : (
         <LoginLandingPage />
