@@ -5,6 +5,11 @@ const rootReducer = (state, action) => {
         ...state,
         inquiries: action.payload,
       }
+    case 'SET_ANALYTICS':
+      return {
+        ...state,
+        analytics: action.payload,
+      }
     case 'SET_ERROR_MESSAGE':
       return {
         ...state,

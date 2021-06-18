@@ -57,6 +57,19 @@ const Inquiries = {
       }
     }
   },
+
+  async getAnalytics() {
+    try {
+      let response = await axios.get('/analytics')
+      debugger
+      store.dispatch({
+        type: 'SET_ANALYTICS',
+        payload: response.data.statistics,
+      })
+    } catch (error) {
+      errorHandler(error)
+    }
+  }
 }
 
 export default Inquiries
