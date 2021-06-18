@@ -50,11 +50,8 @@ describe('broker is able to export inquiry to ', () => {
         {
           statusCode: 409,
           body: {
-            data: {
-              error_message: [
-                'A contact with email lucy@example.com already exists',
-              ],
-            },
+            error_message:
+              'A contact with email lucy@example.com already exists',
           },
         }
       )

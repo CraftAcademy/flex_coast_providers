@@ -62,6 +62,12 @@ const Inquiries = {
         payload: response.data.message,
       })
     } catch (error) {
+      if (error.response?.status === 409) {
+        store.dispatch({
+          type: 'SET_ERROR_MESSAGE',
+          payload: error.response.data.error_message,
+        })
+      }
       errorHandler(error)
     }
   },
