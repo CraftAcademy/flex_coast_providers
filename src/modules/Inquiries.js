@@ -66,7 +66,10 @@ const Inquiries = {
         payload: response.data.statistics,
       })
     } catch (error) {
-      errorHandler(error)
+      store.dispatch({
+        type: 'SET_ERROR_MESSAGE',
+        payload: 'Something went wrong, please try again later',
+      })
     }
   },
 }

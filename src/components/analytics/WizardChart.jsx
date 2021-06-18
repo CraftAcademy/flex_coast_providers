@@ -14,8 +14,8 @@ const WizardChart = ({ data }) => {
     })
   }
   return (
-    <ResponsiveContainer width='100%' height={350} data-cy='wizard-chart'>
-      <FunnelChart>
+    <ResponsiveContainer width='100%' height={350}>
+      <FunnelChart data-cy='wizard-chart'>
         <Tooltip />
         <Funnel
           dataKey='value'

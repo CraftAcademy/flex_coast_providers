@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
 import Collapse from '@material-ui/core/Collapse'
@@ -72,10 +72,10 @@ const InquiryRows = ({ item, notes }) => {
                   Locations:
                   {Array.isArray(item.locations) &&
                     item.locations.map((location, index) => (
-                      <div key={index}>
+                      <Fragment key={index}>
                         <span>{location}</span>
                         <br />
-                      </div>
+                      </Fragment>
                     ))}
                 </p>
                 <p data-cy='phone'>

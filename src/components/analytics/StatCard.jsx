@@ -2,7 +2,7 @@ import React from 'react'
 
 const StatCard = ({ value, title, icon }) => {
   return (
-    <div className='stat-card'>
+    <div className='stat-card' data-cy='stat-card'>
       {icon}
       <div>
         <p>{title}</p>
