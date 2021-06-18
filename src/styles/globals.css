@@ -58,6 +58,11 @@
   margin: 50px 10px 25px;
 }
 
+.drawer .MuiDrawer-paper .menu-link {
+  text-decoration: none;
+  color: #fff;
+}
+
 .status-popover {
   padding: 0 10px;
 }

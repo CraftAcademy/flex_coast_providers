@@ -4,6 +4,7 @@ import List from '@material-ui/core/List'
 import { useSelector } from 'react-redux'
 import Divider from '@material-ui/core/Divider'
 import MailIcon from '@material-ui/icons/Mail'
+import AssessmentIcon from '@material-ui/icons/Assessment'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import Authentication from '../modules/Authentication'
 import SidebarIcon from './SidebarIcon'
@@ -18,8 +19,11 @@ const Sidebar = () => {
       <p>Welcome back</p>
       <p data-cy='broker-name'>{name}</p>
       <List>
-        <SidebarIcon text='Dashboard'>
+        <SidebarIcon text='Dashboard' to='/'>
           <MailIcon />
+        </SidebarIcon>
+        <SidebarIcon text='Analytics' to='/analytics'>
+          <AssessmentIcon />
         </SidebarIcon>
       </List>
       <Divider />
