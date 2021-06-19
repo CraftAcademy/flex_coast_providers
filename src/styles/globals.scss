@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+@import './styles', './variables';
+
+// Globals
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 20px;
+  @media only screen and (max-width: $smallScreen) {
+    font-size: 16px;
+  }
+}
+
+#root {
+  background-color: $backgroundColor;
+}
+
+// Blueprints
+.view-container {
+  padding-top: 75px;
+  padding-left: $drawerWidth + 75px;
+  padding-right: 75px;
+  height: calc(100vh - 75px);
+
+  @media only screen and (max-width: 1280px) {
+    padding: 75px 10px 0 10px;
+  }
+}
+
+.error-snackbar {
+  .MuiSnackbarContent-root {
+    background-color: $secondaryColor !important;
+  }
+}
+
+.success-snackbar {
+  .MuiSnackbarContent-root {
+    background-color: #98ff98 !important;
+  }
+}
+
+.snack-container {
+  p {
+    color: black;
+  }
+}
+
+.error-snack-container {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+
+  p {
+    color: #333;
+    margin-right: 10px;
+  }
+}
+.close-icon {
+  color: #333 !important;
+  float: right;
+}
+.logo {
+  margin: 10px;
+  margin-bottom: 25px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+
+    svg{
+      margin-bottom: -3px;
+      margin-right: 3px;
+    }
+  }
+}

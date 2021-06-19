@@ -1,8 +1,29 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import App from './App'
+import { Provider } from 'react-redux'
+import store from './state/store/configureStore'
+import ReactDOM from 'react-dom'
+import axios from 'axios'
 import reportWebVitals from './reportWebVitals'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+axios.defaults.baseURL =
+  process.env.REACT_APP_STAGE === 'production'
+    ? 'https://flex-coast-production.herokuapp.com/api'
+    : 'https://flex-coast-api-development.herokuapp.com/api'
+
+ReactDOM.render(
+  <Router>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Router>,
+
+  document.getElementById('root')
+)
 
 reportWebVitals()
+
+if (window.Cypress) {
+  window.store = store
+}
