@@ -9,7 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 axios.defaults.baseURL =
   process.env.REACT_APP_STAGE === 'production'
-    ? 'https://flex-coast-production.herokuapp.com/api'
+    ? process.env.REACT_APP_API_URL
     : 'https://flex-coast-api-development.herokuapp.com/api'
 
 ReactDOM.render(
