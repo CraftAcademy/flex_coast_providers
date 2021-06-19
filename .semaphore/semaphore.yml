@@ -14,3 +14,5 @@ blocks:
             - checkout
             - yarn install
             - 'yarn cy:integrate'
+      secrets:
+        - name: Env
