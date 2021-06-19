@@ -15,4 +15,4 @@ blocks:
             - yarn install
             - 'yarn cy:integrate'
       secrets:
-        - name: Env
+        - name: RAILS_MASTER_KEY
