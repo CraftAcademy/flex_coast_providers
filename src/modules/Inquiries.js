@@ -76,7 +76,7 @@ const Inquiries = {
 
   async export(id) {
     try {
-      let response = await axios.post(`/inquiries/${id}/hubspot`, {
+      let response = await axios.post(`/inquiries/${id}/hub_spot`, {
         headers: getHeaders(),
       })
       store.dispatch({
