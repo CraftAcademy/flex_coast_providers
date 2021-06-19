@@ -15,4 +15,4 @@ blocks:
             - yarn install
             - 'yarn cy:integrate'
       secrets:
-        - name: REACT_APP_API_URL
+        - name: Env
