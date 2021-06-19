@@ -3,8 +3,7 @@ import JtockAuth from 'j-tockauth'
 import errorHandler from './ErrorHandler'
 
 const auth = new JtockAuth({
-  host: 'https://flex-coast-api-development.herokuapp.com',
-  prefixUrl: '/api',
+  host: process.env.REACT_APP_API_URL,
   debug: false,
 })
 
