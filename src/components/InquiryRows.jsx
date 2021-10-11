@@ -69,10 +69,6 @@ const InquiryRows = ({ item, notes }) => {
                   Would like to sit with peers:
                   <span>{item.peers ? 'yes' : 'no'}</span>
                 </p>
-                <p data-cy='flexible'>
-                  Flexible or fulltime:
-                  <span>{item.flexible ? 'flexible' : 'full time'}</span>
-                </p>
                 <p data-cy='locations'>
                   Locations:
                   {Array.isArray(item.locations) &&
