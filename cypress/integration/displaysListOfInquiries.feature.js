@@ -32,7 +32,6 @@ describe('User can see the inquiries', () => {
         cy.get('[data-cy=size]').find('span').should('contain', '1')
         cy.get('[data-cy=office-type]').find('span').should('contain', 'office')
         cy.get('[data-cy=peers]').find('span').should('contain', 'yes')
-        cy.get('[data-cy=flexible]').find('span').should('contain', 'flexible')
         cy.get('[data-cy=locations]')
           .find('span')
           .first()
